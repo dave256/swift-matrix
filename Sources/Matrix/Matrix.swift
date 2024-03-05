@@ -177,7 +177,8 @@ public struct Mat4: Equatable {
     }
 
     public static func lookAt(eye: Vec3, coi: Vec3, up: Vec3 = [0, 1, 0]) -> Mat4 {
-        let w = (coi - eye).normalized()
+        // reverse subtraction to match OpenGL
+        let w = (eye - coi).normalized()
         let u = up.cross(w).normalized()
         let v = w.cross(u).normalized()
         let r: Mat4 = [
