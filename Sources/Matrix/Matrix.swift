@@ -13,6 +13,24 @@ public struct Mat4: Equatable {
     public var z: Vec4
     public var w: Vec4
 
+    public static var identity: Mat4 {
+        [
+            [1, 0, 0, 0],
+            [0, 1, 0, 0],
+            [0, 0, 1, 0],
+            [0, 0, 0, 1]
+        ]
+    }
+
+    public static var zero: Mat4 {
+        [
+            [0, 0, 0, 0],
+            [0, 0, 0, 0],
+            [0, 0, 0, 0],
+            [0, 0, 0, 0]
+        ]
+    }
+
     public init(row0 x: Vec4 = [1, 0, 0, 0], row1 y: Vec4 = [0, 1, 0, 0], row2 z: Vec4 = [0, 0, 1, 0], row3 w: Vec4 = [0, 0, 0, 1]) {
         self.x = x
         self.y = y
@@ -39,15 +57,6 @@ public struct Mat4: Equatable {
             default: preconditionFailure("Mat4 index out of range")
             }
         }
-    }
-
-    public static var identity: Mat4 {
-        [
-            [1, 0, 0, 0],
-            [0, 1, 0, 0],
-            [0, 0, 1, 0],
-            [0, 0, 0, 1]
-        ]
     }
 
     public static func *(m: Mat4, v: Vec4) -> Vec4 {

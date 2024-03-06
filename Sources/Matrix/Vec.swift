@@ -13,6 +13,8 @@ public struct Vec3: Equatable{
     public var y: Double
     public var z: Double
 
+    public static var zero: Vec3 { Vec3(x: 0.0, y: 0.0, z: 0.0) }
+
     public init(x: Double, y: Double, z: Double) {
         self.x = x
         self.y = y
@@ -109,6 +111,8 @@ public struct Vec4: Equatable {
     public var y: Double
     public var z: Double
     public var w: Double
+
+    public static var zero: Vec4 { Vec4(x: 0.0, y: 0.0, z: 0.0, w: 0.0) }
 
     public init(x: Double, y: Double, z: Double, w: Double) {
         self.x = x
