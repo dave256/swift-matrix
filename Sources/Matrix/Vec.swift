@@ -61,14 +61,14 @@ public struct Vec3: Equatable{
     }
     
     /// same direction, but length 1
-    mutating func normalize() {
+    public mutating func normalize() {
         let length = sqrt(self.dot(self))
         self = [x / length, y / length, z / length]
     }
     
     /// return new Vec3 with same direction but length 1
     /// - Returns:  new Vec3 with same direction but length 1
-    func normalized() -> Vec3 {
+    public func normalized() -> Vec3 {
         let length = sqrt(self.dot(self))
         return [x / length, y / length, z / length]
     }
@@ -143,14 +143,14 @@ public struct Vec4: Equatable {
     }
 
     /// same direction, but length 1
-    mutating func normalize() {
+    public mutating func normalize() {
         let length = sqrt(self.dot(self))
         self = [x / length, y / length, z / length, z / length]
     }
 
     /// return new Vec4 with same direction but length 1
     /// - Returns:  new Vec4 with same direction but length 1
-    func normalized() -> Vec4 {
+    public func normalized() -> Vec4 {
         let length = sqrt(self.dot(self))
         return [x / length, y / length, z / length, w / length]
     }
