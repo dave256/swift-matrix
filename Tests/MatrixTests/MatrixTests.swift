@@ -43,13 +43,14 @@ final class MatrixTests: XCTestCase {
     }
 
     func testLookAt() {
-        let eye: Vec3 = [2, 5, 4]
-        let coi: Vec3 = [10, 3, 6]
+        let eye: Vec3 = [2, 5, 6]
+        let coi: Vec3 = [4, 15, 17]
         let m = Mat4.lookAt(eye: eye, coi: coi)
         let r = m * coi
         XCTAssertEqual(r[0], 0.0, accuracy: 0.001)
         XCTAssertEqual(r[1], 0.0, accuracy: 0.001)
-        XCTAssertTrue(r[2] < 0.0)
+        // [2, 10, 11] has length 15
+        XCTAssertEqual(r[2], -15.0, accuracy: 0.001)
     }
 
     func testPerspectiveWithLookAt() {
