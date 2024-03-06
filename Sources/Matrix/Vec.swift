@@ -39,10 +39,22 @@ public struct Vec3: Equatable{
         }
     }
 
+    public static func +(lhs: Vec3, rhs: Vec3) -> Vec3 {
+        [lhs.x + rhs.x, lhs.y + rhs.y, lhs.z + rhs.z]
+    }
+
+    public static func +=(lhs: inout Vec3, rhs: Vec3) {
+        lhs = lhs + rhs
+    }
+
     public static func -(lhs: Vec3, rhs: Vec3) -> Vec3 {
         [lhs.x - rhs.x, lhs.y - rhs.y, lhs.z - rhs.z]
     }
-    
+
+    public static func -=(lhs: inout Vec3, rhs: Vec3) {
+        lhs = lhs - rhs
+    }
+
     /// dot product of self and rhs
     /// - Parameter rhs: second vector
     /// - Returns: dot product of self and rhs
@@ -131,8 +143,20 @@ public struct Vec4: Equatable {
         [x / w, y / w, z / w]
     }
 
+    public static func +(lhs: Vec4, rhs: Vec4) -> Vec4 {
+        [lhs.x + rhs.x, lhs.y + rhs.y, lhs.z + rhs.z, lhs.w + rhs.w]
+    }
+
+    public static func +=(lhs: inout Vec4, rhs: Vec4) {
+        lhs = lhs + rhs
+    }
+
     public static func -(lhs: Vec4, rhs: Vec4) -> Vec4 {
         [lhs.x - rhs.x, lhs.y - rhs.y, lhs.z - rhs.z, lhs.w - rhs.w]
+    }
+
+    public static func -=(lhs: inout Vec4, rhs: Vec4) {
+        lhs = lhs - rhs
     }
 
     /// dot product of self and rhs
